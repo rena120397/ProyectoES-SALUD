@@ -14,8 +14,8 @@ public class SeguridadAdm {
         try {
             PreparedStatement ps = 
                 conn.prepareStatement("SELECT ID_USU, NOMBRE, CONTRA, ID_PERFIL  FROM USU WHERE NOMBRE = ? and CONTRA = ?");
-            ps.setString(2, uname);
-            ps.setString(3, uclave);
+            ps.setString(1, uname);
+            ps.setString(2, uclave);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 usuObj = new Usuario();
